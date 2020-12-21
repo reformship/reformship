@@ -1,0 +1,359 @@
+%auto-ignore
+
+%%%%%%%%%%%%%%%%
+%% Math forms %%
+%%%%%%%%%%%%%%%%
+\let\Originalddefinition\d
+\renewcommand{\d}{\ensuremath{\mathrm{d}}}
+\let\Originaledefinition\e
+\newcommand{\e}{\ensuremath{\mathrm{e}}}
+\let\Originalidefinition\i
+\renewcommand{\i}{\ensuremath{\mathrm{i}}}
+\DeclareSymbolFont{wasy}{U}{wasy}{m}{n}
+\DeclareMathSymbol{\thorn}{\mathord}{wasy}{105}
+\DeclareMathSymbol{\Thorn}{\mathord}{wasy}{106}
+\newcommand\Eth{\text{\DH}}
+\newcommand\Alpha{\mathrm{A}}
+\newcommand\Beta{\mathrm{B}}
+\newcommand\Epsilon{\mathrm{E}}
+\newcommand\Varepsilon{\mathit{E}}
+\newcommand\Zeta{\mathrm{Z}}
+\newcommand\Eta{\mathrm{H}}
+\newcommand\Vartheta{\varTheta}
+\newcommand\Iota{\mathrm{I}}
+\newcommand\Kappa{\mathrm{K}}
+\newcommand\Mu{\mathrm{M}}
+\newcommand\Nu{\mathrm{N}}
+\chardef\omicron=111 % For insurance against upcasing
+\chardef\Omicron=79  % For insurance against downcasing
+\newcommand{\Varpi}{\varPi}
+\newcommand\Rho{\mathrm{P}}
+\newcommand\Varrho{\mathit{P}}
+\newcommand\Varsigma{\varSigma}
+\newcommand\Varphi{\varPhi}
+\newcommand\Tau{\mathrm{T}}
+\newcommand\Chi{\mathrm{X}}
+\newcommand\MakeAllUppercase[1]{%
+  % Include eth, thorn, and Greek in MakeUppercase
+  \begingroup
+  \let\eth\Eth
+  \let\thorn\Thorn
+  \let\alpha\Alpha
+  \let\beta\Beta
+  \let\gamma\Gamma
+  \let\delta\Delta
+  \let\epsilon\Epsilon
+  \let\varepsilon\Varepsilon
+  \let\zeta\Zeta
+  \let\eta\Eta
+  \let\theta\Theta
+  \let\vartheta\Vartheta
+  \let\iota\Iota
+  \let\kappa\Kappa
+  \let\lambda\Lambda
+  \let\mu\Mu
+  \let\nu\Nu
+  \let\xi\Xi
+  \let\omicron\Omicron
+  \let\pi\Pi
+  \let\varpi\Varpi
+  \let\rho\Rho
+  \let\varrho\Varrho
+  \let\sigma\Sigma
+  \let\varsigma\Varsigma
+  \let\tau\Tau
+  \let\upsilon\Upsilon
+  \let\phi\Phi
+  \let\varphi\Varphi
+  \let\chi\Chi
+  \let\psi\Psi
+  \let\omega\Omega
+  \MakeUppercase{#1}%
+  \endgroup
+}
+
+
+%% Units
+\let\Originalcdefinition\c
+\renewcommand{\c}{\mathrm{c}}
+\newcommand{\G}{\mathrm{G}}
+\newcommand{\MSun}{\ensuremath{M_\odot}\xspace}
+\newcommand{\Sun}{\MSun}
+\newcommand{\Mtot}{\ensuremath{M_\text{tot}}}
+\DeclareSIUnit{\strain}{strain}
+\DeclareSIPrePower{\root}{1/2}
+\DeclareSIUnit{\parsec}{pc}
+\DeclareSIUnit{\yr}{yr}
+\DeclareSIUnit{\year}{yr}
+\DeclareSIUnit{\lightyear}{ly}
+\DeclareSIUnit{\SolarMass}{\ensuremath{\MSun}}
+\DeclareSIUnit{\Mass}{\ensuremath{M}}
+% \newcommand{\strain}{\text{strain}}
+% \newcommand{\parsec}{\text{pc}}
+% \newcommand{\SolarMass}{\MSun}
+
+%% abs, norm, ceil, floor, avg, etc.
+\newcommand{\abs} [1]{\left\lvert{#1}\right\rvert}
+\newcommand{\norm}[1]{\left\lVert{#1}\right\rVert}
+\newcommand{\ceil}[1]{\left\lceil{#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+\newcommand{\avg}[1]{\left\langle{#1}\right\rangle}
+\newcommand{\co}[1]{\ensuremath{\bar{#1}}}
+\DeclareMathOperator*{\RS}{RiemannSymmetrize}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+% \DeclareMathOperator{\arcsin}{arcsin}
+% \DeclareMathOperator{\arccos}{arccos}
+% \DeclareMathOperator{\arctan}{arctan}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\asinh}{asinh}
+\DeclareMathOperator{\acosh}{acosh}
+\DeclareMathOperator{\atanh}{atanh}
+\DeclareMathOperator{\acsch}{acsch}
+\DeclareMathOperator{\asech}{asech}
+\DeclareMathOperator{\acoth}{acoth}
+
+%% Relational operators
+\newcommand{\defined}{\coloneqq}
+\newcommand{\identically}{\equiv}
+\newcommand{\roughly}{\mathord{\sim}} % Different from \sim in spacing
+%\newcommand{\corresponds}{\triangleq}
+\newcommand{\asymptoticallyequal}{\simeq}
+\newcommand{\homeomorphic}{\cong}
+\newcommand{\isomorphic}{\approx}
+
+
+
+%% Asymptotically flat limits
+\newcommand{\scri}{\ensuremath{\mathscr{I}}}
+\newcommand{\scriplus}{\ensuremath{\mathscr{I}^{+}}}
+\newcommand{\scriminus}{\ensuremath{\mathscr{I}^{-}}}
+\newcommand{\Mirr}{\ensuremath{M_{\text{irr}}}}
+\newcommand{\Eadm}{\ensuremath{M_{\text{ADM}}}}
+\newcommand{\Jadm}{\ensuremath{J_{\text{ADM}}}}
+\newcommand{\ADMMass}{\Eadm}
+\newcommand{\IrrMass}{\Mirr}
+\newcommand{\tr}{\ensuremath{t_\text{ret}}}
+\newcommand{\rt}{\ensuremath{r_{\ast}}}
+
+%% Wigner matrices, rotations, etc.
+\newcommand{\trivialgroup}{\langle 0 \rangle}
+\newcommand{\D}{\ensuremath{\mathfrak{D}} }
+\newcommand{\R}{\ensuremath{\mathcal{R}} }
+% \newcommand{\sYlm}[1]{\ensuremath{\prescript{}{s}{Y}_{#1}}}
+% \newcommand{\mTwoYlm}[1]{\ensuremath{\prescript{}{-2}{Y}_{#1}}}
+\newcommand{\sYlm}[1]{\ensuremath{\scripts{_{s}}{Y}{_{#1}}}}
+\newcommand{\sYbarlm}[1]{\ensuremath{\scripts{_{s}}{\bar{Y}}{_{#1}}}}
+\newcommand{\mTwoYlm}[1]{\ensuremath{\scripts{_{-2}}{Y}{_{#1}}}}
+\newcommand{\mTwoYbarlm}[1]{\ensuremath{\scripts{_{-2}}{\bar{Y}}{_{#1}}}}
+%\newcommand{\Rotated}[1]{\ensuremath{\accentset{\frown}{#1}}}
+%\newcommand{\Rotated}[1]{\ensuremath{\breve{#1}}}
+%\newcommand{\Rotated}[1]{\ensuremath{#1'}}
+\DeclareSymbolFont{tipa}{T3}{tipa}{m}{n}
+\DeclareMathAccent{\ibreve}{\mathalpha}{tipa}{'020}
+\newcommand{\Rotated}[1]{\ensuremath{\ibreve{#1}}}
+\newcommand{\Rotation}[1]{\mathbf{\MakeUppercase{#1}}}
+\newcommand{\LieElement}[1]{\mathbf{\MakeUppercase{#1}}}
+\newcommand{\LieComponent}[2]{\mathrm{\MakeUppercase{#1}}_{#2}}
+\newcommand{\LieGenerator}[1]{\mathbf{\MakeLowercase{#1}}}
+\newcommand{\LieGeneratorMag}[1]{\mathrm{\MakeLowercase{#1}}}
+\newcommand{\GeneratorVec}[1]{\ensuremath{\vec{\MakeLowercase{#1}}}}
+\DeclareMathOperator{\adjoint}{ad}
+\DeclareMathOperator{\Adjoint}{Ad}
+\newcommand{\ad}[1]{\adjoint_{\LieGenerator{#1}}}
+\newcommand{\Ad}[1]{\Adjoint_{\LieGenerator{#1}}}
+\newcommandx{\structure}[3][2={}, 3={}]{f^{#1 #2}_{#3}}
+
+\newcommand{\SO}[1]{\ensuremath{\mathrm{SO}(#1)}}
+\newcommand{\so}[1]{\ensuremath{\mathfrak{so}(#1)}}
+\newcommand{\SOp}[1]{\ensuremath{\mathrm{SO}^{+}(#1)}}
+\newcommand{\sop}[1]{\ensuremath{\mathfrak{so}^{+}(#1)}}
+\newcommand{\SU}[1]{\ensuremath{\mathrm{SU}(#1)}}
+\newcommand{\su}[1]{\ensuremath{\mathfrak{su}(#1)}}
+\newcommand{\Spin}[1]{\ensuremath{\mathrm{Spin}(#1)}}
+\newcommand{\spin}[1]{\ensuremath{\mathfrak{so}(#1)}}
+\newcommand{\HopfMap}{\mathfrak{h}}
+\newcommand{\TangentBundle}[1]{\mathrm{T}\left(#1\right)}
+\newcommand{\UnitTangentBundle}[1]{\mathrm{UT}\left(#1\right)}
+\newcommand{\TangentBundleAt}[2]{\mathrm{T}_{#1}\left(#2\right)}
+\newcommand{\UnitTangentBundleAt}[2]{\mathrm{UT}_{#1}\left(#2\right)}
+
+%% Metric perturbation
+\newcommand{\Background}[1]{\underaccent{\frown}{#1}}
+\newcommand{\h}{\ensuremath{h} }
+\newcommand{\hp}{\ensuremath{h_{+}} }
+\newcommand{\hc}{\ensuremath{h_{\times}} }
+\newcommand{\htilde}{\ensuremath{{\tilde{h}}}}
+\newcommand{\Schw}{\ensuremath{\Background{R}} }
+\newcommand{\GW}{\tilde{R}}
+\newcommand{\Schwg}{\ensuremath{\Background{g}} }
+\newcommand{\GWg}{\tilde{g}}
+\newcommand{\SchwScalar}{\ensuremath{{\Background{\boxdot}}} }
+
+%% Frequencies, discretization, DA stuff...
+\newcommand{\fsamp}{\ensuremath{f_{\mathrm{s}}}}
+\newcommand{\fNy}{\ensuremath{f_{\mathrm{Ny}}}}
+\newcommand{\discretize}{\rightsquigarrow}
+%%\newcommand{\MM}{\text{MM}} %% See below
+\newcommand{\parameters}{\vec{\lambda}}
+\newcommand{\response}{\ensuremath{\mathcal{R}}}
+\newcommand{\phifid}{\ensuremath{\phi_{\text{fid}}}}
+\newcommand{\ffid}{\ensuremath{f_{\text{fid}}}}
+\newcommand{\tfid}{\ensuremath{t_{\text{fid}}}}
+\newcommand{\tf}{\ensuremath{t_{(f)}}}
+\newcommand{\tfOne}{\ensuremath{t_{1,(f)}}}
+\newcommand{\tfTwo}{\ensuremath{t_{2,(f)}}}
+\newcommand{\omegah}{\ensuremath{\omega_{\text{hyb}}}}
+\newcommand{\fhyb}{\ensuremath{f_{\text{hyb}}}}
+\newcommand{\thyb}{\ensuremath{t_{\text{hyb}}}}
+
+%% Boldface (indexless) four-tensor notation
+\newcommand{\Tensor}[1]{\bm{\mathsf{#1}}}
+\newcommand{\FourVector}[1]{\bm{#1}}
+\newcommand{\Vector}[1]{\FourVector{#1}}
+
+%% Three-vector
+\newcommand{\ThreeVector}[1]{\Vector{#1}}
+
+\newcommand{\fourvec}[1]{\FourVector{#1}}
+% \renewcommand{\threevec}[1]{\ensuremath{\vec{#1}}}
+% \newcommand{\threevec}{\fourvec}
+% \newcommand{\unitvec}[1]{\hat{\fourvec{#1}}}
+\newcommand{\threevec}{\Vector}
+\newcommand{\rHat}{\unitvec{r}}
+\newcommand{\nHat}{\unitvec{n}}
+\newcommand{\xHat}{\unitvec{x}}
+\newcommand{\yHat}{\unitvec{y}}
+\newcommand{\zHat}{\unitvec{z}}
+
+%% Polarization tensors
+\newcommand{\pol}{\ensuremath{\varepsilon}}
+\newcommand{\polp}{{\ensuremath{\pol_{+}}}}
+\newcommand{\polc}{{\ensuremath{\pol_{\times}}}}
+
+%% Transverse, traceless part
+\newcommand{\TT}{\mathrm{TT}}
+
+
+%%%%%%%%%%%%%%%%
+%% Text forms %%
+%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\foreign}[1]{\textit{#1}} % {\textrm{#1}}
+\newcommand{\etal}{\textit{et~al}\@ifnextchar{\relax}{.\relax}{\ifx\@let@token.\else\ifx\@let@token~.\else.\@\xspace\fi\fi}}
+\newcommand{\etc}{\foreign{etc}\@ifnextchar{\relax}{.\relax}{\ifx\@let@token.\else\ifx\@let@token~.\else.\@\xspace\fi\fi}}
+\newcommand{\eg}{\foreign{e.g}\@ifnextchar{\relax}{.\relax}{\ifx\@let@token.\else\ifx\@let@token~.\else.\@\xspace\fi\fi}}
+\newcommand{\ie}{\foreign{i.e}\@ifnextchar{\relax}{.\relax}{\ifx\@let@token.\else\ifx\@let@token~.\else.\@\xspace\fi\fi}}
+\newcommand{\perse}{\foreign{per~se}\xspace}
+\makeatother
+
+\newcommand{\pN}{\text{PN}\xspace}
+\newcommand{\PN}{\pN\xspace}
+\newcommand{\Pade}{{Pad{\'{e}}}\xspace}
+\newcommand{\Poincare}{Poincar{\'{e}}\xspace}
+\newcommand{\Bezier}{B{\'{e}}zier\xspace}
+\newcommand{\Mobius}{M{\"{o}}bius\xspace}
+
+\definecolor{NoteColor}{rgb}{0.900, 0.218, 0.000}
+\newcommand{\Note}[1]{\textcolor{NoteColor}{[#1]}\index{Note}}
+\definecolor{NewColor}{rgb}{0,.55,0}
+\newcommand{\New}[1]{\textcolor{NewColor}{#1}\index{New}}
+
+\newcommand{\software}[1]{\textsc{#1}}
+\newcommand{\command}[1]{\texttt{\small{#1}}}
+\newcommand{\code}[1]{\texttt{\small{#1}}}
+
+
+%%%%%%%%%%%%%%
+%% Commands %%
+%%%%%%%%%%%%%%
+\makeatletter
+%% For caption names
+\newcommand{\CapName}[1]{\textbf{#1}.}
+%% The following command allows you to enter \ShowDimensions anywhere
+%% in a document, and -- at processing -- see all the dimensions (I
+%% could think of) in the terminal.
+\newcommand{\ShowDimensions}{%
+  \typeout{The font encoding is \f@encoding}        %
+  \typeout{The font family is \f@family}            %
+  \typeout{The font series is \f@series}            %
+  \typeout{The font shape is \f@shape}              %
+  \typeout{The font size is \f@size}                %
+  \typeout{The baselineskip is \f@baselineskip}     %
+  \typeout{The math font size is \tf@size}          %
+  \typeout{The math script size is \sf@size}        %
+  \typeout{The math scriptscript size is \ssf@size} %
+  \typeout{The linewidth is \the\linewidth}         %
+  \typeout{The textwidth is \the\textwidth}         %
+}
+%% This is a simpler version of amsmath's 'sideset' command, which
+%% allows prefixed sub- and superscripts.  Use as something like:
+%%   $\prefixscripts{^{-2}}{Y}$
+\newcommand{\prefixscripts}[2]{%
+  \@mathmeasure\z@\displaystyle{#2}%
+  \global\setbox\@ne\vbox to\ht\z@{}\dp\@ne\dp\z@
+  \setbox\tw@\box\@ne
+  \@mathmeasure4\displaystyle{\copy\tw@#1}%
+  \@mathmeasure6\displaystyle{#2}%
+  \dimen@-\wd6 \advance\dimen@\wd4 \advance\dimen@\wd\z@
+  \hbox to\dimen@{}{\kern-\dimen@\box4\box6}%
+}
+%% When a symbol using \prefixscripts also has postfixed sub- and
+%% superscripts, the postfixed scripts are set relatively high or low,
+%% compared to the prefixed scripts.  This command improves that.  Use
+%% as something like:
+%%   $\scripts{^{-2}}{Y}{_{lm}}$
+\newcommand{\scripts}[3]{%
+  \@mathmeasure\z@\displaystyle{#2}%
+  \global\setbox\@ne\vbox to\ht\z@{}\dp\@ne\dp\z@
+  \setbox\tw@\box\@ne
+  \@mathmeasure4\displaystyle{\copy\tw@#1}%
+  \@mathmeasure6\displaystyle{#2#3}%
+  \dimen@-\wd6 \advance\dimen@\wd4 \advance\dimen@\wd\z@
+  \hbox to\dimen@{}{\kern-\dimen@\box4\box6}%
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% My extension of the braket package for inner products        %%
+%% This allows code like $\InnerProduct{s|h}$, which works much %%
+%% like $\Braket{x|y}$.                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\let\protect\relax
+{\catcode`\|=\active
+  \xdef\InnerProduct{\protect\expandafter\noexpand\csname InnerProduct \endcsname}
+  \expandafter\gdef\csname InnerProduct \endcsname#1{%
+    \begingroup
+    \ifx\SavedDoubleVert\relax
+    \let\SavedDoubleVert\|\let\|\IpDoubleVert
+    \fi
+    \mathcode`\|32768\let|\IPVert
+    \left({#1}\right)
+    \endgroup
+  }
+}
+\def\IPVert{\@ifnextchar|{\|\@gobble}% turn || into \|
+     {\egroup\,\mid@vertical\,\bgroup}}
+\def\IPDoubleVert{\egroup\,\mid@dblvertical\,\bgroup}
+\let\SavedDoubleVert\relax
+\def\midvert{\egroup\mid\bgroup}
+\def\SetVert{\@ifnextchar|{\|\@gobble}% turn || into \|
+    {\egroup\;\mid@vertical\;\bgroup}}
+\def\SetDoubleVert{\egroup\;\mid@dblvertical\;\bgroup}
+\def\mid@vertical{\mskip1mu\vrule\mskip1mu}
+\def\mid@dblvertical{\mskip1mu\vrule\mskip2.5mu\vrule\mskip1mu}
+\makeatother
+\newcommand{\Overlap}{\Braket}
+\newcommand{\Mismatch}{\ensuremath{\text{MM}}}
+\newcommand{\MM}[2]{\ensuremath{\Mismatch\left(#1,#2\right)}}
+\newcommand{\TargetMismatch}{\ensuremath{\Mismatch_{\text{target}}}}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "paper"
+%%% End:
